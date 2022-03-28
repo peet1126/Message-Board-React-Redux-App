@@ -1,4 +1,4 @@
-# AVB Frontend Assesment
+# AVB Frontend Assessment
 
 ## Peter McDonald's project summary
 
@@ -9,7 +9,7 @@ Main Components and their purpose:
 - The CommentCard component displays an individual comment. The CommentCard contains the commenter's name, comment text, and avatar(initials from the commenter's first and last name).
 - The CommentList component renders a list of all the comments by mapping through the Redux store's comments state and generating a CommentCard for each comment.
 - The TopThreeCommenters component massages the Redux store comments state to get a new array that organizes the comments by commenter's name and orders those commenters in descending order of comment count. The component then renders a CommentCard for the top three commenters containing a name, comment count, and the commenter's avatar.
-- The CommentModal is a popup modal for the user to add a comment. It contains a form with two inputs name and comment. When the user submits a comment, an action is dispatched containing the new comment. The redux store is then updated with a new comment listed in the comment state.
+- The CommentModal is a popup modal for the user to add a comment. It contains a form with two inputs, name and comment. When the user submits a comment, an action is dispatched containing the new comment. The Redux store is then updated with a new comment listed in the comment state.
 
 Redux is used to manage the state of this app. The Redux store wraps the entire application and gives all the app components access to the store's state. The initial state of the store is an array of mock comments. The initial store state is accessed by the CommentList and TopThreeCommenters components for the initial renders of these two components. If the store state is ever changed, these components will be rerendered with the updated state. The CommentModal is the only component that changes the store's comment state. It does this by dispatching an action with a payload to the reducer, which updates the store comment state and triggers a rerender of all the components that subscribe to the store comment state.
 
