@@ -1,32 +1,43 @@
-
 # AVB Frontend Assesment
+
+## Peter McDonald's project summary
+
+This project allows the user to see a list of comments, add a comment, and see a list of the top 3 commenters. The project is built with React, Material UI for styling components, and Redux Toolkit for state management.
+
+Main Components and their purpose:
+
+- The CommentCard component displays an individual comment. The CommentCard contains the commenter's name, comment text, and avatar(initials from the commenter's first and last name).
+- The CommentList component renders a list of all the comments by mapping through the Redux store's comments state and generating a CommentCard for each comment.
+- The TopThreeCommenters component massages the Redux store comments state to get a new array that organizes the comments by commenter's name and orders those commenters in descending order of comment count. The component then renders a CommentCard for the top three commenters containing a name, comment count, and the commenter's avatar.
+- The CommentModal is a popup modal for the user to add a comment. It contains a form with two inputs name and comment. When the user submits a comment, an action is dispatched containing the new comment. The redux store is then updated with a new comment listed in the comment state.
+
+Redux is used to manage the state of this app. The Redux store wraps the entire application and gives all the app components access to the store's state. The initial state of the store is an array of mock comments. The initial store state is accessed by the CommentList and TopThreeCommenters components for the initial renders of these two components. If the store state is ever changed, these components will be rerendered with the updated state. The CommentModal is the only component that changes the store's comment state. It does this by dispatching an action with a payload to the reducer, which updates the store comment state and triggers a rerender of all the components that subscribe to the store comment state.
+
+A Material UI Theme is provided to the application and is used to set the primary, secondary colors and the padding for the cards across the application. The Theme specifies the styles for all the Material UI components allowing for consistent styling across the entire application.
 
 ## User Story
 
 As a user, I would like to be able to read a list of comments, add a comment, and see a list of the top 3 commenters.
 
-
 ### Tasks
 
 > Please add comments to help explain decisions and add a summary to the README
 
-1) Use Material-UI theme for custom color scheme(primary and secondary colors)
-2) Display list of comments
-   1) Comment UI should consist of avatar(first initial or first + last initial), name, and comment
-   2) `store/api` has mock comments
-   3) Extra: fetch from API to display initial comments instead of mock comments
-3) Facilitate adding a comment via modal with input fields(name and comment), and submit button
-4) Display a list of top 3 commenters
-   1) Ui should consist of avatar(same as above) name, and comment count
-   2) Should be listed in descending order of comment count
-
+1. Use Material-UI theme for custom color scheme(primary and secondary colors)
+2. Display list of comments
+   1. Comment UI should consist of avatar(first initial or first + last initial), name, and comment
+   2. `store/api` has mock comments
+   3. Extra: fetch from API to display initial comments instead of mock comments
+3. Facilitate adding a comment via modal with input fields(name and comment), and submit button
+4. Display a list of top 3 commenters
+   1. Ui should consist of avatar(same as above) name, and comment count
+   2. Should be listed in descending order of comment count
 
 ### Useful Links
 
-* https://v4.mui.com/
-* https://redux-toolkit.js.org/
-* https://jsonplaceholder.typicode.com/comments
-
+- https://v4.mui.com/
+- https://redux-toolkit.js.org/
+- https://jsonplaceholder.typicode.com/comments
 
 # Getting Started with Create React App
 
