@@ -1,4 +1,4 @@
-# AVB Frontend Assessment
+# Message Board React Redux App
 
 ## Peter McDonald's project summary
 
